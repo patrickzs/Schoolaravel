@@ -15,6 +15,15 @@ class Teacher extends Model
         'permanent_address',
     ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [ // [UPGRADE-FIX]
+        'dateofbirth' => 'datetime', // [UPGRADE-FIX]
+    ]; // [UPGRADE-FIX]
+
     public function user()
     {
         return $this->belongsTo(User::class);
